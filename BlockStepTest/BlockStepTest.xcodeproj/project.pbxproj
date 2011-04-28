@@ -11,7 +11,7 @@
 		79C688E31369122D0069F85D /* GHUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C688E21369122D0069F85D /* GHUnitTestMain.m */; };
 		79C688E8136912410069F85D /* GHUnit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 79C68897136911490069F85D /* GHUnit.framework */; };
 		79C6891F136916330069F85D /* BlockStepTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C6891E136916330069F85D /* BlockStepTests.m */; };
-		79EF56A41369184800BE2B3B /* blockStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EF56A31369184800BE2B3B /* blockStep.m */; };
+		79FF128613696082007C60E5 /* BlockStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FF128513696082007C60E5 /* BlockStep.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -40,8 +40,8 @@
 		79C688E21369122D0069F85D /* GHUnitTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHUnitTestMain.m; path = vendor/GHUnitTestMain.m; sourceTree = "<group>"; };
 		79C6891D136916330069F85D /* BlockStepTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockStepTests.h; sourceTree = "<group>"; };
 		79C6891E136916330069F85D /* BlockStepTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockStepTests.m; sourceTree = "<group>"; };
-		79EF56A21369184800BE2B3B /* blockStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = blockStep.h; path = ../blockStep.h; sourceTree = SOURCE_ROOT; };
-		79EF56A31369184800BE2B3B /* blockStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = blockStep.m; path = ../blockStep.m; sourceTree = SOURCE_ROOT; };
+		79FF128413696082007C60E5 /* BlockStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlockStep.h; path = ../BlockStep.h; sourceTree = "<group>"; };
+		79FF128513696082007C60E5 /* BlockStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlockStep.m; path = ../BlockStep.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* BlockStepTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BlockStepTest-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* BlockStepTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlockStepTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -59,15 +59,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		080E96DDFE201D6D7F000001 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				79C6891D136916330069F85D /* BlockStepTests.h */,
-				79C6891E136916330069F85D /* BlockStepTests.m */,
-			);
-			name = Tests;
-			sourceTree = "<group>";
-		};
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,9 +89,10 @@
 		29B97314FDCFA39411CA2CEA /* BlockStepTest */ = {
 			isa = PBXGroup;
 			children = (
-				79EF56A21369184800BE2B3B /* blockStep.h */,
-				79EF56A31369184800BE2B3B /* blockStep.m */,
-				080E96DDFE201D6D7F000001 /* Tests */,
+				79C6891D136916330069F85D /* BlockStepTests.h */,
+				79C6891E136916330069F85D /* BlockStepTests.m */,
+				79FF128413696082007C60E5 /* BlockStep.h */,
+				79FF128513696082007C60E5 /* BlockStep.m */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -200,7 +192,7 @@
 			files = (
 				79C688E31369122D0069F85D /* GHUnitTestMain.m in Sources */,
 				79C6891F136916330069F85D /* BlockStepTests.m in Sources */,
-				79EF56A41369184800BE2B3B /* blockStep.m in Sources */,
+				79FF128613696082007C60E5 /* BlockStep.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
