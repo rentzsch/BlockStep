@@ -1,4 +1,4 @@
-// blockStep 0.1: https://github.com/rentzsch/blockStep
+// blockStep 0.2: https://github.com/rentzsch/blockStep
 //   Copyright (c) 2011 Jonathan 'Wolf' Rentzsch: http://rentzsch.com
 //   Some rights reserved: http://opensource.org/licenses/mit-license.php
 
@@ -17,23 +17,13 @@ typedef void (^BlockStepBlock)(BlockStep *blockStep);
     id previousStepResult;
 #endif
 }
+@property(retain) NSMutableArray *steps;
+@property(assign) NSUInteger nextStepIndex;
 @property(retain) NSError *error;
 @property(retain) id previousStepResult;
 
-- (id)initAndExecuteSteps:(BlockStepBlock[])steps_ count:(NSUInteger)stepCount_;
++ (id)run:(BlockStepBlock)firstStep, ... NS_REQUIRES_NIL_TERMINATION;
 
 - (void)callNextStepWithError:(NSError*)error_ result:(id)result_;
+- (void)complete;
 @end
-
-#ifndef sizeofA
-    #define sizeofA(array) (sizeof(array)/sizeof(array[0]))
-#endif
-
-#define STEP(...)                                                                       \
-    {                                                                                   \
-        BlockStepBlock steps[] = {__VA_ARGS__};                                         \
-        NSUInteger stepCount = sizeofA(steps);                                          \
-        [[[BlockStep alloc] initAndExecuteSteps:steps                                   \
-                                          count:stepCount] callNextStepWithError:nil    \
-                                                                          result:nil];  \
-    }
