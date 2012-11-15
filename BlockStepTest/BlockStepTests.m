@@ -14,8 +14,7 @@
          step_1_called = YES;
          [blockStep complete];
      },
-     nil
-     ];
+     nil];
     GHAssertTrue(step_1_called, nil);
 }
 
@@ -30,8 +29,7 @@
          step_1_called = YES;
          [blockStep callNextStepWithError:nil result:nil];
      },
-     nil
-     ];
+     nil];
     GHAssertTrue(step_1_called, nil);
 }
 
@@ -50,8 +48,7 @@
      ^(BlockStep *blockStep){
          assert(0); // shouldn't be called
      },
-     nil
-     ];
+     nil];
     GHAssertTrue(step_1_called, nil);
     GHAssertFalse(step_2_called, nil);
 }
@@ -76,8 +73,7 @@
          
          step_2_called = YES;
      },
-     nil
-     ];
+     nil];
     GHAssertTrue(step_1_called, nil);
     GHAssertTrue(step_2_called, nil);
 }
@@ -103,8 +99,7 @@
          step_2_called = YES;
          [blockStep callNextStepWithError:nil result:@"tres"];
      },
-     nil
-     ];
+     nil];
     GHAssertTrue(step_1_called, nil);
     GHAssertTrue(step_2_called, nil);
 }
@@ -137,12 +132,39 @@
          [blockStep callNextStepWithError:nil result:@"tres"];
          [blockSelf notify:kGHUnitWaitStatusSuccess forSelector:@selector(testTwoAsyncSteps_firstStepCallsNextStep_lastStepCallsNextStep)];
      },
-     nil
-     ];
+     nil];
     
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:5];
     GHAssertTrue(step_1_called, nil);
     GHAssertTrue(step_2_called, nil);
 }
+
+#if 0
+- (void)derp {
+    __block NSFileHandle *fileHandle = nil;
+    [BlockStep run:
+     ^(BlockStep *blockStep){
+         [NSFileHandle fileHandleForReadingFromURL:fileURL block:^(NSError *error, NSFileHandle *fh){
+             if (error) {
+                 [blockStep complete];
+             } else {
+                 fileHandle = fh;
+                 [blockStep callNextStep];
+             }
+         }];
+     },
+     ^(BlockStep *blockStep){
+         [fileHandle readToEndOfFileInBackgroundAndCallBlock:^(NSError *error, NSData *buffer){
+             if (error) {
+                 [blockStep complete];
+             } else {
+                 fileHandle = fh;
+                 [blockStep callNextStep];
+             }
+         }];
+     },
+     nil];
+}
+#endif
 
 @end
