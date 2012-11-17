@@ -1,10 +1,12 @@
-#BlockStep
-
-![BlockStep logo](https://github.com/rentzsch/BlockStep/raw/master/BlockStep.png)
+# BlockStep
 
 BlockStep is a simple Objective-C source library (one header and source file) that helps you chain blocks together to make asynchronous (code with block callbacks) code read more like straightforward synchronous code.
 
 ## Version History
+
+### v1.0: Nov 16 2012
+
+* Promote v0.2 to v1.0 prior to work on v2.0.
 
 ### v0.2: Apr 27 2011
 
