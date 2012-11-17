@@ -1,6 +1,7 @@
-// blockStep 0.2: https://github.com/rentzsch/blockStep
-//   Copyright (c) 2011 Jonathan 'Wolf' Rentzsch: http://rentzsch.com
-//   Some rights reserved: http://opensource.org/licenses/mit-license.php
+// BlockStep.m semver:1.0.0
+//   Copyright (c) 2011-2012 Jonathan 'Wolf' Rentzsch: http://rentzsch.com
+//   Some rights reserved: http://opensource.org/licenses/mit
+//   https://github.com/rentzsch/BlockStep
 
 #import "BlockStep.h"
 #include <unistd.h>
