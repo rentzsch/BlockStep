@@ -1,5 +1,5 @@
 #import "BlockStepTests.h"
-#import "blockStep.h"
+#import "BlockStep.h"
 
 @implementation BlockStepTests
 

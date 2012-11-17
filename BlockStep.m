@@ -2,7 +2,7 @@
 //   Copyright (c) 2011 Jonathan 'Wolf' Rentzsch: http://rentzsch.com
 //   Some rights reserved: http://opensource.org/licenses/mit-license.php
 
-#import "blockStep.h"
+#import "BlockStep.h"
 #include <unistd.h>
 
 @implementation BlockStep
